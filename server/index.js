@@ -13,9 +13,6 @@ const routes = require('../routes/api');
 // Have Node serve the files for built React app
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-  });
 }
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -26,8 +23,6 @@ mongoose.connect(process.env.MONGO_URI, {
 mongoose.connection.on('connected', () => {
   console.log('mongoose is connected');
 });
-
-// All other GET requests not handled before will return our React app
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
