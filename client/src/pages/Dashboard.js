@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import AddExercise from '../components/AddExercise';
 import DisplayExercises from '../components/DisplayExercises';
@@ -25,7 +24,3 @@ export default function Dashboard() {
     </Container>
   );
 }
-
-// chart of time exercised perday
-// form for adding exercise
-// todo list

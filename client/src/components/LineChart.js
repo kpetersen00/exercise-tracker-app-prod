@@ -56,14 +56,13 @@ export default function LineChart() {
     log.map((exercise) => {
       let logDate = new Date(parseInt(exercise.date));
       if (
-        day.getFullYear() == logDate.getFullYear() &&
-        day.getMonth() == logDate.getMonth() &&
-        day.getDate() == logDate.getDate()
+        day.getFullYear() === logDate.getFullYear() &&
+        day.getMonth() === logDate.getMonth() &&
+        day.getDate() === logDate.getDate()
       ) {
         total += exercise.duration;
       }
     });
-    // console.log(total, day);
     data.push(total);
   }
 

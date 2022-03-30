@@ -20,7 +20,7 @@ function App() {
           <Container
             fluid
             className=' d-flex '
-            style={{ height: '90vh', marginTop: '4rem' }}
+            style={{ height: '90vh', marginTop: '5rem' }}
           >
             <div className='w-100'>
               <Routes>
