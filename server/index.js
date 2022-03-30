@@ -24,11 +24,6 @@ mongoose.connection.on('connected', () => {
   console.log('mongoose is connected');
 });
 
-// // All other GET requests not handled before will return our React app
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-// });
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
