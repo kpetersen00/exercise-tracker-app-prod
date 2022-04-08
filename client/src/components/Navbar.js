@@ -19,31 +19,34 @@ export default function Navigation() {
   }
 
   return (
-    <Navbar bg='dark' variant='dark' fixed='top' className='px-5 '>
+    <Navbar bg='dark' variant='dark' fixed='top' className='px-5 ' expand='md'>
       {error && alert(error)}
       <LinkContainer to='/'>
         <Navbar.Brand>Exercise Tracker</Navbar.Brand>
       </LinkContainer>
-      <Navbar.Toggle />
-      <Navbar.Collapse className='justify-content-end'></Navbar.Collapse>
-      {currentUser ? (
-        <Nav>
-          <Navbar.Text>Signed in as: </Navbar.Text>
-          <LinkContainer to='/update-profile'>
-            <Nav.Link>{currentUser.email}</Nav.Link>
-          </LinkContainer>
-          <Nav.Link onClick={handleLogout}>Log out</Nav.Link>
-        </Nav>
-      ) : (
-        <Nav>
-          <LinkContainer to='/login'>
-            <Nav.Link>Log In</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/signup'>
-            <Nav.Link>Sign Up</Nav.Link>
-          </LinkContainer>
-        </Nav>
-      )}
+      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      <Navbar.Collapse className='justify-content-end '>
+        {currentUser ? (
+          <Nav>
+            <Navbar.Text>
+              Signed in as:
+              <LinkContainer to='/update-profile'>
+                <Nav.Link>{currentUser.email}</Nav.Link>
+              </LinkContainer>
+            </Navbar.Text>
+            <Nav.Link onClick={handleLogout}>Log out</Nav.Link>
+          </Nav>
+        ) : (
+          <Nav>
+            <LinkContainer to='/login'>
+              <Nav.Link>Log In</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/signup'>
+              <Nav.Link>Sign Up</Nav.Link>
+            </LinkContainer>
+          </Nav>
+        )}
+      </Navbar.Collapse>
     </Navbar>
   );
 }
